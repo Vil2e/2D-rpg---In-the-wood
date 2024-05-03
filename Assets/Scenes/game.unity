@@ -21519,10 +21519,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
-    - target: {fileID: 7164904516326253848, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7974152729824505680, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -21628,10 +21624,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21648,10 +21640,6 @@ PrefabInstance:
     - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_Name
       value: Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7311675522018652895, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_RootOrder
@@ -21888,10 +21876,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2004171779}
     m_Modifications:
-    - target: {fileID: 1252484845682180998, guid: 61af9a8b23113418095aa4bb84366e55, type: 3}
-      propertyPath: damage
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7278790131072763073, guid: 61af9a8b23113418095aa4bb84366e55, type: 3}
       propertyPath: m_Name
       value: Goblin
@@ -21956,10 +21940,6 @@ PrefabInstance:
     - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_Name
       value: Skeleton (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7311675522018652895, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_RootOrder
@@ -22065,10 +22045,6 @@ PrefabInstance:
     - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
       propertyPath: m_Name
       value: Bee (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24235,10 +24211,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
-    - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24300,10 +24272,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee
       objectReference: {fileID: 0}
-    - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24364,10 +24332,6 @@ PrefabInstance:
     - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
       propertyPath: m_Name
       value: Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24542,10 +24506,6 @@ PrefabInstance:
     - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_Name
       value: Skeleton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7311675522018652895, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_RootOrder
@@ -28753,10 +28713,6 @@ PrefabInstance:
     - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
       propertyPath: m_Name
       value: Slime (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

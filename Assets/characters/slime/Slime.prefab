@@ -216,6 +216,7 @@ MonoBehaviour:
   bodyRemainTime: 2
   knockbackCooldown: 0.3
   health: 3
+  attackRange: 0.25
 --- !u!95 &-7433677391543162386
 Animator:
   serializedVersion: 5

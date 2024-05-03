@@ -151,9 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackForce: 100
   damage: 1
-  bodyRemainTime: 1
+  bodyRemainTime: 2
   knockbackCooldown: 0.3
   health: 4
+  attackRange: 0.25
 --- !u!58 &3078850972405440134
 CircleCollider2D:
   m_ObjectHideFlags: 0

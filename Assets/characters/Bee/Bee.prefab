@@ -237,6 +237,7 @@ MonoBehaviour:
   bodyRemainTime: 2
   knockbackCooldown: 0.5
   health: 3
+  attackRange: 0.25
 --- !u!58 &1159799155104810987
 CircleCollider2D:
   m_ObjectHideFlags: 0

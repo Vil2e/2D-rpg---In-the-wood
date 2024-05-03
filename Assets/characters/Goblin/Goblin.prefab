@@ -233,11 +233,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 150
-  damage: 1
+  damage: 2
   bodyRemainTime: 1
   knockbackCooldown: 0.5
-  attackRange: 0.4
   health: 10
+  attackRange: 0.4
 --- !u!58 &8797656531812181456
 CircleCollider2D:
   m_ObjectHideFlags: 0
