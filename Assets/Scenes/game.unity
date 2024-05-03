@@ -21888,6 +21888,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2004171779}
     m_Modifications:
+    - target: {fileID: 1252484845682180998, guid: 61af9a8b23113418095aa4bb84366e55, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7278790131072763073, guid: 61af9a8b23113418095aa4bb84366e55, type: 3}
       propertyPath: m_Name
       value: Goblin
