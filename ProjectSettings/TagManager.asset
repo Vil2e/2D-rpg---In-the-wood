@@ -12,10 +12,10 @@ TagManager:
   - player
   - Water
   - UI
-  - enemy
-  - hurtbox
-  - detection zone
-  - tile map
+  - Enemy
+  - Hurtbox
+  - Detection Zone
+  - Tile Map
   - 
   - 
   - 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 95119013476787002}
   - component: {fileID: 2589841410702579792}
   m_Layer: 0
-  m_Name: attack potion
+  m_Name: Attack Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

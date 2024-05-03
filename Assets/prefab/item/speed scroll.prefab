@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2133402473801543656}
   - component: {fileID: 9158398502880472372}
   m_Layer: 0
-  m_Name: speed scroll
+  m_Name: Speed Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
