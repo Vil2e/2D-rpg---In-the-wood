@@ -101,9 +101,9 @@ public class Goblin : MonoBehaviour , IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if (damageable != null)
+        if (playerHealth != null)
         {
             Vector3 parentPos = transform.position;
             Vector3 targetPos = collision.transform.position;
@@ -112,12 +112,16 @@ public class Goblin : MonoBehaviour , IDamageable
             distance = Vector3.Distance(targetPos, parentPos);
             Vector2 knockback = direction * knockbackForce;
 
-            if(distance < attackRange)
+            //當玩家在攻擊範圍時 進入攻擊mode
+            if (distance < attackRange)
             {
                 isAttacking = true;
                 animator.SetBool("isMoving", false);
+                playerHealth.OnHit(damage, knockback);
                 animator.SetBool("isAttack", isAttacking);
-                damageable.OnHit(damage, knockback);
+                playerHealth.OnHit(damage, knockback);
+
+
             }
 
             //collision.SendMessage("OnHit", damage, knockback);
@@ -127,10 +131,11 @@ public class Goblin : MonoBehaviour , IDamageable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if (damageable != null)
+        if (player != null)
         {
+            //玩家離開攻擊範圍 解除攻擊mode
             distance = Vector3.Distance(collision.transform.position, transform.position);
             if (distance > attackRange)
             {
@@ -138,7 +143,7 @@ public class Goblin : MonoBehaviour , IDamageable
                 animator.SetBool("isAttack", isAttacking);
             }
         }
-           
+
     }
 
     //knockback冷卻過後 再次追擊玩家

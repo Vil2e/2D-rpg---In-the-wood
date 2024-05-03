@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 150
-  damage: 2
+  damage: 1
   bodyRemainTime: 1
   knockbackCooldown: 0.5
   attackRange: 0.4

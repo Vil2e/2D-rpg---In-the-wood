@@ -95,9 +95,9 @@ public class Enemy : MonoBehaviour , IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if (damageable != null)
+        if (playerHealth != null)
         {
             Vector3 parentPos = transform.position;
 
@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour , IDamageable
             Vector2 knockback = direction * knockbackForce;
 
             //collision.SendMessage("OnHit", damage, knockback);
-            damageable.OnHit(damage, knockback);
+            playerHealth.OnHit(damage, knockback);
 
         }
     }

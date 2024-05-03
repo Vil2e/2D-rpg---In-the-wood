@@ -102,9 +102,9 @@ public class Wolf : MonoBehaviour , IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if (damageable != null)
+        if (playerHealth != null)
         {
             Vector3 parentPos = transform.position;
             Vector3 targetPos = collision.transform.position;
@@ -118,9 +118,9 @@ public class Wolf : MonoBehaviour , IDamageable
             {
                 isAttacking = true;
                 animator.SetBool("isMoving", false);
-                damageable.OnHit(damage, knockback);
+                playerHealth.OnHit(damage, knockback);
                 animator.SetBool("isAttack", isAttacking);
-                damageable.OnHit(damage,knockback);
+                playerHealth.OnHit(damage,knockback);
 
 
             }
@@ -132,9 +132,9 @@ public class Wolf : MonoBehaviour , IDamageable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
 
-        if (damageable != null)
+        if (player != null)
         {
             //玩家離開攻擊範圍 解除攻擊mode
             distance = Vector3.Distance(collision.transform.position, transform.position);
