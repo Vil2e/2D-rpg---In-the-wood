@@ -41,7 +41,7 @@ public class Monster : MonoBehaviour
 
     public float knockbackForce = 400f;
     public float damage = 1f;
-    public float bodyRemainTime = 1f;
+    public float bodyRemainTime = 2f;
 
     public float knockbackCooldown = .5f;
     public float health = 1;

@@ -82,10 +82,10 @@ public class SwordAttack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageableObject = collision.GetComponent<IDamageable>();
+        Monster monster = collision.GetComponent<Monster>();
 
 
-        if (damageableObject != null)
+        if (monster != null)
         {
             enemyRender = collision.gameObject.GetComponent<SpriteRenderer>();
 
@@ -105,7 +105,7 @@ public class SwordAttack : MonoBehaviour
             Vector2 knockback = direction * knockbackForce;
 
             //collision.SendMessage("OnHit", damage, knockback);
-            damageableObject.OnHit(damage, knockback);
+            monster.OnHit(damage, knockback);
 
            
 
