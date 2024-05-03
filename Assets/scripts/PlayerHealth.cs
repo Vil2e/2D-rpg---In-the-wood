@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour , IDamageable
+public class PlayerHealth : MonoBehaviour
 {
     public float Health
     {
         set
         {
-            if (value < health)
+            if (value < currentHealth)
             {
                 animator.SetTrigger("hit");
 
             }
 
-            health = value;
+        
 
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 animator.SetBool("isAlive", false);
                 SFXManager.instance.PlayerDeath();
@@ -26,11 +26,13 @@ public class PlayerHealth : MonoBehaviour , IDamageable
                 player.enabled = false;
 
             }
+
+            currentHealth = value;
         }
 
         get
         {
-            return health;
+            return currentHealth;
         }
     }
 
@@ -41,38 +43,47 @@ public class PlayerHealth : MonoBehaviour , IDamageable
     [SerializeField] Rigidbody2D rb;
 
 
-    public float health;
+    public float currentHealth;
     public float maxHealth = 12f;
 
-    public delegate void TakeDamage();
-    public static event TakeDamage OnDamage;
+    public delegate void HealthUpdate();
+    //更新血量UI圖示
+    public static event HealthUpdate OnhealthUpdate;
 
     private void Awake()
     {
-        health = maxHealth;
+        currentHealth = maxHealth;
     }
 
-
-    public void MakeUntargetable()
-    {
-        return;
-    }
-
-    
 
     public void OnHit(float damage, Vector2 knockback)
     {
         Health -= damage;
+        OnhealthUpdate();
+
+
         SFXManager.instance.PlayerHit();
         rb.AddForce(knockback);
-        OnDamage();
     }
 
     public void OnHit(float damage)
     {
         SFXManager.instance.PlayerHit();
         Health -= damage;
-        OnDamage();
+        OnhealthUpdate();
+    }
+
+    public void Recover(float value)
+    {
+        Health += value;
+
+        if (currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        OnhealthUpdate();
+
     }
 
 

@@ -10,12 +10,12 @@ public class HealthHeartBar : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerHealth.OnDamage += DrawHearts;
+        PlayerHealth.OnhealthUpdate += DrawHearts;
     }
 
     private void OnDisable()
     {
-        PlayerHealth.OnDamage -= DrawHearts;
+        PlayerHealth.OnhealthUpdate -= DrawHearts;
     }
 
     private void Start()
@@ -53,7 +53,7 @@ public class HealthHeartBar : MonoBehaviour
         for(int i= 0; i < heartsToMake; i++)
         {
             //這裡的運算是把當下體力 - 換算一顆心的體力點,然後加入clamp的閥值
-            int heartStatusRemainder = (int)Mathf.Clamp(playerHealth.health - (i * 4), 0, 4);
+            int heartStatusRemainder = (int)Mathf.Clamp(playerHealth.currentHealth - (i * 4), 0, 4);
             hearts[i].SetHeartImage((HealthHeart.HeartStatus)heartStatusRemainder);
         }
 
