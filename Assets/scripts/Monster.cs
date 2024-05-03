@@ -8,19 +8,8 @@ public class Monster : MonoBehaviour
     {
         set
         {
-            if (value < health)
-            {
-                animator.SetTrigger("hit");
-
-            }
-
             health = value;
 
-            if (health <= 0)
-            {
-                animator.SetBool("isAlive", false);
-                Defeated();
-            }
         }
 
         get
@@ -40,7 +29,8 @@ public class Monster : MonoBehaviour
     protected bool isAttacking = true;
 
     public float knockbackForce = 400f;
-    public float damage = 1f;
+    public float Damage { get { return damage; } protected set { damage = value; }}
+    [SerializeField] float damage = 1f;
     public float bodyRemainTime = 2f;
 
     public float knockbackCooldown = .5f;
@@ -77,11 +67,19 @@ public class Monster : MonoBehaviour
     public void OnHit(float damage, Vector2 knockback)
     {
         Health -= damage;
+        animator.SetTrigger("hit");
         detectionZone.canApproach = false;
         animator.SetBool("isMoving", false);
         rb.AddForce(knockback, ForceMode2D.Impulse);
 
         Invoke("ReApproach", knockbackCooldown);
+
+        if (health <= 0)
+        {
+            health = 0;
+            animator.SetBool("isAlive", false);
+            Defeated();
+        }
 
     }
 

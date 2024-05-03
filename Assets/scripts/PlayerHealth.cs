@@ -9,24 +9,6 @@ public class PlayerHealth : MonoBehaviour
     {
         set
         {
-            if (value < currentHealth)
-            {
-                animator.SetTrigger("hit");
-
-            }
-
-        
-
-            if (currentHealth <= 0)
-            {
-                animator.SetBool("isAlive", false);
-                SFXManager.instance.PlayerDeath();
-                col.enabled = false;
-                rb.simulated = false;
-                player.enabled = false;
-
-            }
-
             currentHealth = value;
         }
 
@@ -43,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
 
-    public float currentHealth;
+    float currentHealth;
     public float maxHealth = 12f;
 
     public delegate void HealthUpdate();
@@ -59,11 +41,22 @@ public class PlayerHealth : MonoBehaviour
     public void OnHit(float damage, Vector2 knockback)
     {
         Health -= damage;
+        animator.SetTrigger("hit");
         OnhealthUpdate();
-
-
         SFXManager.instance.PlayerHit();
         rb.AddForce(knockback);
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            animator.SetBool("isAlive", false);
+            SFXManager.instance.PlayerDeath();
+            col.enabled = false;
+            rb.simulated = false;
+            player.enabled = false;
+        }
+
+
     }
 
     public void OnHit(float damage)

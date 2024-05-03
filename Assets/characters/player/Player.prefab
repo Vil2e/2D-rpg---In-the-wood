@@ -94,7 +94,7 @@ MonoBehaviour:
   animator: {fileID: 1163474102503881812}
   col: {fileID: 7994601851695735066}
   rb: {fileID: 5028091279979846178}
-  health: 12
+  currentHealth: 0
   maxHealth: 12
 --- !u!1 &6992013887607001726
 GameObject:

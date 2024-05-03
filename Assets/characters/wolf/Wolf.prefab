@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4098362536013503122}
   - component: {fileID: 4253538816806014826}
   - component: {fileID: 6759439654199600897}
-  - component: {fileID: 6606436546991297767}
+  - component: {fileID: 1807865434952607919}
   - component: {fileID: 4991050926129044920}
   m_Layer: 6
   m_Name: Wolf
@@ -220,7 +220,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6606436546991297767
+--- !u!114 &1807865434952607919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7164904516326253848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bcba82c753c4d7fa544ae6f223fff0, type: 3}
+  m_Script: {fileID: 11500000, guid: e327e784217504733a3d1837b0dd94e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 100
