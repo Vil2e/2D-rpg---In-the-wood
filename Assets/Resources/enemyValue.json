@@ -1,0 +1,59 @@
+{
+  "#enemyValue#": [
+    {
+      "ID(n)": 1,
+      "Name_": "史萊姆",
+      "HP(n)": 3,
+      "Damage(n)": 1,
+      "Knockback(n)": 100,
+      "Knockback Cooldown(d)": 0.3,
+      "Attack Range(d)": 0,
+      "Detection Zone(d)": 1,
+      "Speed(d)": 1
+    },
+    {
+      "ID(n)": 2,
+      "Name_": "蜜蜂",
+      "HP(n)": 3,
+      "Damage(n)": 1,
+      "Knockback(n)": 100,
+      "Knockback Cooldown(d)": 0.5,
+      "Attack Range(d)": 0,
+      "Detection Zone(d)": 0.7,
+      "Speed(d)": 1.1
+    },
+    {
+      "ID(n)": 3,
+      "Name_": "骷髏",
+      "HP(n)": 4,
+      "Damage(n)": 1,
+      "Knockback(n)": 100,
+      "Knockback Cooldown(d)": 0.3,
+      "Attack Range(d)": 0,
+      "Detection Zone(d)": 0.8,
+      "Speed(d)": 1
+    },
+    {
+      "ID(n)": 4,
+      "Name_": "狼",
+      "HP(n)": 5,
+      "Damage(n)": 1,
+      "Knockback(n)": 100,
+      "Knockback Cooldown(d)": 0.5,
+      "Attack Range(d)": 0.25,
+      "Detection Zone(d)": 1,
+      "Speed(d)": 1.1
+    },
+    {
+      "ID(n)": 5,
+      "Name_": "哥布林",
+      "HP(n)": 10,
+      "Damage(n)": 2,
+      "Knockback(n)": 150,
+      "Knockback Cooldown(d)": 0.5,
+      "Attack Range(d)": 0.4,
+      "Detection Zone(d)": 0.8,
+      "Speed(d)": 0.7
+    }
+  ]
+}
