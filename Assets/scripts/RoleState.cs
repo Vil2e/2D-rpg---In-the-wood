@@ -18,10 +18,10 @@ public class RoleState
 
     }
 
-    public RoleState(string json)
-    {
+    //public RoleState(string json)
+    //{
 
-    }
+    //}
 
 
 }
