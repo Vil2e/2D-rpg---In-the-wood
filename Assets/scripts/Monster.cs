@@ -18,7 +18,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    RoleState mystate;
+    //RoleState mystate;
 
     protected bool isAlive = true;
 
@@ -43,7 +43,8 @@ public class Monster : MonoBehaviour
 
     protected void Start()
     {
-        mystate = new RoleState();
+        //mystate = new RoleState();
+        
         detectionZone = GetComponentInChildren<DetectionZone>();
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", isAlive);
