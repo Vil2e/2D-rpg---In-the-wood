@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 
 public class RoleState : MonoBehaviour
 {
-    
     public class Role
     {
         public int id;
@@ -19,21 +18,6 @@ public class RoleState : MonoBehaviour
         public float detectionZone;
         public float speed;
 
-
-        public Role(int id, string name, int hp, int damage, int knockback, float knockbackCooldown, float attackRange, float detectionZone, float speed)
-        {
-            this.id = id;
-            this.name = name;
-            this.hp = hp;
-            this.damage = damage;
-            this.knockback = knockback;
-            this.knockbackCooldown = knockbackCooldown;
-            this.attackRange = attackRange;
-            this.detectionZone = detectionZone;
-            this.speed = speed;
-        }
-
-
     }
 
     public class RootRole
@@ -42,26 +26,22 @@ public class RoleState : MonoBehaviour
 
     }
 
-    //建一個儲存怪物數值的字典
-    Dictionary<int, Role> enemyValues = new Dictionary<int, Role>();
+    public RootRole rootRole = new RootRole();
 
-    
-    private void Start()
+    [SerializeField] int monsterIndex;
+
+    private void Awake()
     {
-
-        //讀取resource底下的json檔案, 並轉換成string
+        //讀取resource底下的json檔案
         //注意這邊是使用.text
         string info = Resources.Load<TextAsset>("enemyValue").text;
+        
+        rootRole = JsonConvert.DeserializeObject<RootRole>(info);
+        //依照怪物index擷取需要的json file部分
+        //這裡轉回去是用Role
+        string jsonFile = JsonConvert.SerializeObject(rootRole.roles[monsterIndex]);
 
-        RootRole rootRole = JsonConvert.DeserializeObject<RootRole>(info);
-
-
-        //把enemy數值存到字典中
-        for(int i = 0; i < rootRole.roles.Count; i++)
-        {
-            enemyValues.Add(rootRole.roles[i].id, rootRole.roles[i]);
-        }
-
+        Role monster = JsonConvert.DeserializeObject<Role>(jsonFile);
 
     }
 }
