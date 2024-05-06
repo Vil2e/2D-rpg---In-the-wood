@@ -60,11 +60,11 @@ public class Monster : MonoBehaviour
     public float Damage { get { return damage; } protected set { damage = value; }}
     [SerializeField] float damage = 1f;
 
-    float bodyRemainTime = 2f;
-    float knockbackForce = 400f;
-    float knockbackCooldown = .5f;
-    float health = 1;
-    float attackRange = .25f;
+    float bodyRemainTime;
+    float knockbackForce;
+    float knockbackCooldown;
+    float health;
+    float attackRange;
 
 
     private void Awake()
@@ -80,6 +80,8 @@ public class Monster : MonoBehaviour
 
         Role monster = JsonConvert.DeserializeObject<Role>(jsonFile);
 
+
+        //賦值
         detectionZone = GetComponentInChildren<DetectionZone>();
         detectRange = GetComponentInChildren<CircleCollider2D>().radius;
         
