@@ -12,7 +12,9 @@ public class DetectionZone : MonoBehaviour
     Vector3 targetPos;
     Animator animator;
     SpriteRenderer render;
-    [SerializeField] float moveSpeed = 1f;
+    float moveSpeed = 1f;
+
+    public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
 
     List<GameObject> targetList = new List<GameObject>();
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class Monster : MonoBehaviour
 {
@@ -18,7 +19,32 @@ public class Monster : MonoBehaviour
         }
     }
 
-    //RoleState mystate;
+
+    public class Role
+    {
+        public int id;
+        public string name;
+        public int hp;
+        public int damage;
+        public int knockback;
+        public float knockbackCooldown;
+        public float attackRange;
+        public float detectionZone;
+        public float speed;
+        public float bodyRemainTime;
+
+    }
+
+    public class RootRole
+    {
+        public List<Role> roles = new List<Role>();
+
+    }
+
+    public RootRole rootRole = new RootRole();
+
+    //選取對應的怪物index
+    [SerializeField] int monsterIndex;
 
     protected bool isAlive = true;
 
@@ -28,24 +54,50 @@ public class Monster : MonoBehaviour
 
     protected Collider2D physicsCollider;
     protected DetectionZone detectionZone;
+    protected float detectRange;
     protected bool isAttacking = true;
 
-    public float knockbackForce = 400f;
     public float Damage { get { return damage; } protected set { damage = value; }}
     [SerializeField] float damage = 1f;
-    public float bodyRemainTime = 2f;
 
-    public float knockbackCooldown = .5f;
-    public float health = 1;
-    public float attackRange = .25f;
- 
+    float bodyRemainTime = 2f;
+    float knockbackForce = 400f;
+    float knockbackCooldown = .5f;
+    float health = 1;
+    float attackRange = .25f;
+
+
+    private void Awake()
+    {
+        //讀取resource底下的json檔案
+        //注意這邊是使用.text
+        string info = Resources.Load<TextAsset>("enemyValue").text;
+
+        rootRole = JsonConvert.DeserializeObject<RootRole>(info);
+        //依照怪物index擷取需要的json file部分
+        //這裡轉回去是用Role
+        string jsonFile = JsonConvert.SerializeObject(rootRole.roles[monsterIndex-1]);
+
+        Role monster = JsonConvert.DeserializeObject<Role>(jsonFile);
+
+        detectionZone = GetComponentInChildren<DetectionZone>();
+        detectRange = GetComponentInChildren<CircleCollider2D>().radius;
+        
+        Health = monster.hp;
+        Damage = monster.damage;
+        knockbackForce = monster.knockback;
+        knockbackCooldown = monster.knockbackCooldown;
+        attackRange = monster.attackRange;
+        detectRange = monster.detectionZone;
+        detectionZone.MoveSpeed = monster.speed;
+        bodyRemainTime = monster.bodyRemainTime;
+    }
 
 
     protected void Start()
     {
         //mystate = new RoleState();
         
-        detectionZone = GetComponentInChildren<DetectionZone>();
         animator = GetComponent<Animator>();
         animator.SetBool("isAlive", isAlive);
         rb = GetComponentInChildren<Rigidbody2D>();
@@ -53,6 +105,7 @@ public class Monster : MonoBehaviour
         //detectionZone = GetComponentInChildren<DetectionZone>();
 
     }
+
 
 
     public void Defeated()

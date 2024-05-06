@@ -232,12 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e327e784217504733a3d1837b0dd94e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 100
+  monsterIndex: 2
   damage: 1
   bodyRemainTime: 2
-  knockbackCooldown: 0.5
-  health: 3
-  attackRange: 0.25
 --- !u!58 &1159799155104810987
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -267,9 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e327e784217504733a3d1837b0dd94e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 150
+  monsterIndex: 5
   damage: 2
   bodyRemainTime: 1
-  knockbackCooldown: 0.5
-  health: 10
-  attackRange: 0.4
