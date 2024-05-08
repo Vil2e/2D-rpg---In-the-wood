@@ -73,11 +73,12 @@ public class Monster : MonoBehaviour
         //注意這邊是使用.text
         string info = Resources.Load<TextAsset>("enemyValue").text;
 
+        //這裡得到的資料是RootRole type 裡面是列出所有的monster value
         rootRole = JsonConvert.DeserializeObject<RootRole>(info);
-        //依照怪物index擷取需要的json file部分
-        //這裡轉回去是用Role
-        string jsonFile = JsonConvert.SerializeObject(rootRole.roles[monsterIndex-1]);
 
+        //依照怪物index擷取需要的json file部分
+        string jsonFile = JsonConvert.SerializeObject(rootRole.roles[monsterIndex-1]);
+        //這裡轉回去是用Role
         Role monster = JsonConvert.DeserializeObject<Role>(jsonFile);
 
 
