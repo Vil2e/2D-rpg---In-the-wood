@@ -20,27 +20,6 @@ public class Monster : MonoBehaviour
     }
 
 
-    public class Role
-    {
-        public int id;
-        public string name;
-        public int hp;
-        public int damage;
-        public int knockback;
-        public float knockbackCooldown;
-        public float attackRange;
-        public float detectionZone;
-        public float speed;
-        public float bodyRemainTime;
-
-    }
-
-    public class RootRole
-    {
-        public List<Role> roles = new List<Role>();
-
-    }
-
     public RootRole rootRole = new RootRole();
 
     //選取對應的怪物index
@@ -69,18 +48,7 @@ public class Monster : MonoBehaviour
 
     private void Awake()
     {
-        //讀取resource底下的json檔案
-        //注意這邊是使用.text
-        string info = Resources.Load<TextAsset>("enemyValue").text;
-
-        //這裡得到的資料是RootRole type 裡面是列出所有的monster value
-        rootRole = JsonConvert.DeserializeObject<RootRole>(info);
-
-        //依照怪物index擷取需要的json file部分
-        string jsonFile = JsonConvert.SerializeObject(rootRole.roles[monsterIndex-1]);
-        //這裡轉回去是用Role
-        Role monster = JsonConvert.DeserializeObject<Role>(jsonFile);
-
+        Role monster = ReadJson.Instance.GetMonsterValue(monsterIndex);
 
         //賦值
         detectionZone = GetComponentInChildren<DetectionZone>();
@@ -97,7 +65,7 @@ public class Monster : MonoBehaviour
     }
 
 
-    protected void Start()
+    private void Start()
     {
         //mystate = new RoleState();
         
@@ -107,11 +75,10 @@ public class Monster : MonoBehaviour
         physicsCollider = GetComponent<Collider2D>();
         //detectionZone = GetComponentInChildren<DetectionZone>();
 
+        
     }
 
-
-
-    public void Defeated()
+    private void Defeated()
     {
         SFXManager.instance.DeathSound();
         physicsCollider.enabled = false;
@@ -150,12 +117,7 @@ public class Monster : MonoBehaviour
 
     }
 
-    public void MakeUntargetable()
-    {
-        rb.simulated = false;
-    }
-
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
 
@@ -173,7 +135,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    protected virtual void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
 
@@ -191,13 +153,13 @@ public class Monster : MonoBehaviour
     }
 
     //knockback冷卻過後 再次追擊玩家
-    protected void ReApproach()
+    private void ReApproach()
     {
         detectionZone.canApproach = true;
 
     }
 
-    protected void DestroyEnemy()
+    private void DestroyEnemy()
     {
         Destroy(gameObject);
     }
