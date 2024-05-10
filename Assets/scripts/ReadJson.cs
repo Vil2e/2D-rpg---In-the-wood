@@ -23,7 +23,6 @@ public class ReadJson : MonoBehaviour
 
         ReadMonsterValue();
 
-
     }
 
     //讀monster數值

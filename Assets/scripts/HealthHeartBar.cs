@@ -5,11 +5,12 @@ using UnityEngine;
 public class HealthHeartBar : MonoBehaviour
 {
     [SerializeField] GameObject heartPrefab;
-    [SerializeField] PlayerHealth playerHealth;
+    PlayerHealth playerHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();
 
     private void OnEnable()
     {
+        playerHealth = FindAnyObjectByType<PlayerHealth>();
         PlayerHealth.OnhealthUpdate += DrawHearts;
     }
 
