@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &3144949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3660634148598524384, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
+  m_PrefabInstance: {fileID: 1215155316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480203f27aaf2439686ddcdff2182a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4054543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21542,6 +21553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 7164904516326253848, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7974152729824505680, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -21647,6 +21662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21663,6 +21682,10 @@ PrefabInstance:
     - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_Name
       value: Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311675522018652895, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_RootOrder
@@ -21903,6 +21926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 7278790131072763073, guid: 61af9a8b23113418095aa4bb84366e55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7911200704581048148, guid: 61af9a8b23113418095aa4bb84366e55, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -21963,6 +21990,10 @@ PrefabInstance:
     - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_Name
       value: Skeleton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311675522018652895, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_RootOrder
@@ -22068,6 +22099,10 @@ PrefabInstance:
     - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
       propertyPath: m_Name
       value: Bee (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24144,6 +24179,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820123806243209358, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24201,6 +24244,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3660634148598524384, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1928006444}
     - target: {fileID: 3660634148598524384, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
       propertyPath: player
       value: 
@@ -24274,6 +24321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee
       objectReference: {fileID: 0}
+    - target: {fileID: 5975592994330743879, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24334,6 +24385,10 @@ PrefabInstance:
     - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24508,6 +24563,10 @@ PrefabInstance:
     - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_Name
       value: Skeleton (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982842661619493116, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311675522018652895, guid: 0a7e7a20b97514ec986f1bf3b7f84cea, type: 3}
       propertyPath: m_RootOrder
@@ -28497,6 +28556,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1928006444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6218726107110002285, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+  m_PrefabInstance: {fileID: 5143918894068167923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1989590664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1931643987718445679, guid: 00cdcdd7033e44e15906aee7606a0a14, type: 3}
@@ -28776,6 +28840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8142778752190074818, guid: 29d806640bb8049049a92e24ab5c46fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28834,7 +28902,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e1fe6b01e591c49409c0357b86019d78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45220,3 +45288,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ef25b8abdc34039b9f7ca30f353345, type: 3}
+--- !u!1001 &5143918894068167923
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 617900054014915527, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218726107110002285, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_Name
+      value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218726107110002285, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6789202206595440866, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 3144949}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 786ac37cea7db45c4af22ac1e4c29b6d, type: 3}

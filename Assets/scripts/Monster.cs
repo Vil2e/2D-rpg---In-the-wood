@@ -51,6 +51,8 @@ public class Monster : MonoBehaviour
 
     [SerializeField] BoxCollider2D attackBox;
 
+    [SerializeField] bool isBoss;
+
     private void Awake()
     {
         Role monster = ReadJson.Instance.GetMonsterValue(monsterIndex);
@@ -86,12 +88,23 @@ public class Monster : MonoBehaviour
 
     private void Defeated()
     {
+      
+
         animator.SetBool("isAttack", false);
         SFXManager.instance.DeathSound();
         physicsCollider.enabled = false;
         rb.simulated = false;
         detectionZone.canApproach = false;
+
+        if (isBoss)
+        {
+            GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+            gameManager.LevelFinished();
+        }
+
         CancelInvoke("ReApproach");
+
+        
 
         Invoke("DestroyEnemy", bodyRemainTime);
 

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] bool isGameStart;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject door;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void StartGame() 
+    public void LoadNextScene() 
     {
         int totalSceneAmount = SceneManager.sceneCountInBuildSettings;
         int currentScene = SceneManager.GetActiveScene().buildIndex;
@@ -41,6 +42,16 @@ public class GameManager : MonoBehaviour
     {
         EditorApplication.ExitPlaymode();
         Application.Quit();
+
+    }
+
+    //用來打開下一關的門
+    public void LevelFinished()
+    {
+        if(door != null)
+        {
+            door.SetActive(true);
+        }
 
     }
 
