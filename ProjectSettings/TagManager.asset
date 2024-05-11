@@ -13,11 +13,11 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - Hurtbox
+  - Player Hurtbox
   - Detection Zone
   - Tile Map
-  - 
-  - 
+  - Player Attack
+  - Enemy Attack
   - 
   - 
   - 

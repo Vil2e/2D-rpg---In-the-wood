@@ -94,7 +94,6 @@ MonoBehaviour:
   animator: {fileID: 1163474102503881812}
   col: {fileID: 7994601851695735066}
   rb: {fileID: 5028091279979846178}
-  currentHealth: 0
   maxHealth: 12
 --- !u!1 &6992013887607001726
 GameObject:
@@ -107,7 +106,7 @@ GameObject:
   - component: {fileID: 7403547979425001307}
   - component: {fileID: 8854612466336149535}
   - component: {fileID: 4928642953078025095}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwordHitbox_hori (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +228,7 @@ Transform:
   - {fileID: 7403547979425001307}
   - {fileID: 8943630568554380451}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7233401542532389236
 SpriteRenderer:

@@ -15,7 +15,10 @@ public class DetectionZone : MonoBehaviour
     float moveSpeed = 1f;
 
     [SerializeField] bool attackType;//有勾選的才需要check attack range
-    [SerializeField] Monster monster;
+
+    Monster monster;
+
+  
 
 
 
@@ -24,13 +27,17 @@ public class DetectionZone : MonoBehaviour
 
     public bool canApproach = true;//用來處理knockback時的cool down
 
+    Vector3 lTemp;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponentInParent<Rigidbody2D>();
         animator = GetComponentInParent<Animator>();
         render = GetComponentInParent<SpriteRenderer>();
-        
+        monster = GetComponentInParent<Monster>();
+        lTemp = monster.gameObject.GetComponent<Transform>().localScale;
+
     }
 
     private void Update()
@@ -53,29 +60,33 @@ public class DetectionZone : MonoBehaviour
                 animator.SetFloat("YInput", direction.y);
                 animator.SetBool("isMoving", true);
 
+                //往左往右 sprite的翻轉
                 if (direction.x > 0)
                 {
-                    render.flipX = false;
+                    lTemp.x = 1;
+                    //render.flipX = false;
+                    monster.gameObject.GetComponent<Transform>().localScale = lTemp;
+
                 }
                 else if (direction.x < 0)
                 {
-                    render.flipX = true;
+                    lTemp.x = -1;
+                    monster.gameObject.GetComponent<Transform>().localScale = lTemp;
+                    //render.flipX = true;
                 }
+
+                //if (direction.x > 0)
+                //{
+                //    render.flipX = false;
+                //}
+                //else if (direction.x < 0)
+                //{
+                //    render.flipX = true;
+                //}
             }
 
         }
 
-
-        //if (attackType && playerDetected)
-        //{
-        //    PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
-        //    if(playerHealth != null)
-        //    {
-        //        playerHealth.OnHit(monster.Damage);
-        //        StartCoroutine("AttackRest");
-        //    }
-
-        //}
 
     }
 
@@ -88,6 +99,16 @@ public class DetectionZone : MonoBehaviour
 
             playerDetected = true;
             targetPos = collision.transform.position;
+
+            if(distance <= monster.AttackRange)
+            {
+                animator.SetBool("isAttack", true);
+            }
+
+            else if(distance > monster.AttackRange)
+            {
+                animator.SetBool("isAttack", false);
+            }
 
         }
      
@@ -106,10 +127,6 @@ public class DetectionZone : MonoBehaviour
         }
     }
 
-    IEnumerator AttackRest()
-    {
-        yield return new WaitForSeconds(1);
-    }
-
+   
     
 }

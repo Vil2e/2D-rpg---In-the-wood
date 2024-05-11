@@ -48,6 +48,9 @@ public class Monster : MonoBehaviour
     public float AttackRange { get { return attackRange; } }
     public float KnockbackForce { get { return knockbackForce; } }
 
+
+    [SerializeField] BoxCollider2D attackBox;
+
     private void Awake()
     {
         Role monster = ReadJson.Instance.GetMonsterValue(monsterIndex);
@@ -83,6 +86,7 @@ public class Monster : MonoBehaviour
 
     private void Defeated()
     {
+        animator.SetBool("isAttack", false);
         SFXManager.instance.DeathSound();
         physicsCollider.enabled = false;
         rb.simulated = false;
@@ -149,6 +153,16 @@ public class Monster : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+
+    void EnableAttack()
+    {
+        attackBox.enabled = true;
+    }
+
+    void DisableAttack()
+    {
+        attackBox.enabled = false;
     }
 
 }
