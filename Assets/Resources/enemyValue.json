@@ -57,7 +57,7 @@
             "knockbackCooldown": 0.5,
             "attackRange": 0.4,
             "detectionZone": 0.8,
-            "speed": 0.7,
+            "speed": 0.5,
             "bodyRemainTime": 3
         },
         {
