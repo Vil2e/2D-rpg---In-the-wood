@@ -81,7 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Player
-  moveSpeed: 0.7
+  attackType: 1
+  monster: {fileID: 8177911159672164622}
   canApproach: 1
 --- !u!1 &7278790131072763073
 GameObject:
@@ -118,7 +119,7 @@ Transform:
   m_Children:
   - {fileID: 1049879633619737470}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1281714542972263122
 SpriteRenderer:
@@ -269,4 +270,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterIndex: 5
   damage: 2
-  bodyRemainTime: 1

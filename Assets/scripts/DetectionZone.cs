@@ -14,9 +14,13 @@ public class DetectionZone : MonoBehaviour
     SpriteRenderer render;
     float moveSpeed = 1f;
 
+    [SerializeField] bool attackType;//有勾選的才需要check attack range
+    [SerializeField] Monster monster;
+
+
+
     public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
 
-    List<GameObject> targetList = new List<GameObject>();
 
     public bool canApproach = true;//用來處理knockback時的cool down
 
@@ -29,10 +33,15 @@ public class DetectionZone : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+      
+    }
+
     // Update is called once per frame
     void FixedUpdate()
-    {
-        if (canApproach)
+    {   //處理怪物的移動
+        if (canApproach)//這個變數是處理怪被打到的情況 有冷卻時間才能再移動
         {
             if (playerDetected && targetPos != Vector3.zero)
             {
@@ -56,6 +65,18 @@ public class DetectionZone : MonoBehaviour
 
         }
 
+
+        //if (attackType && playerDetected)
+        //{
+        //    PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+        //    if(playerHealth != null)
+        //    {
+        //        playerHealth.OnHit(monster.Damage);
+        //        StartCoroutine("AttackRest");
+        //    }
+
+        //}
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -63,11 +84,11 @@ public class DetectionZone : MonoBehaviour
 
         if (collision.CompareTag(target))
         {
-            //用list來處理鎖定的玩家
-            targetList.Add(collision.gameObject);
+            float distance = Vector3.Distance(collision.transform.position, transform.position);
+
             playerDetected = true;
             targetPos = collision.transform.position;
-            
+
         }
      
     }
@@ -77,7 +98,6 @@ public class DetectionZone : MonoBehaviour
         if (collision.CompareTag(target))
         {
             
-            targetList.Remove(collision.gameObject);
             targetPos = Vector3.zero;
             playerDetected = false;
             direction = Vector2.zero;
@@ -86,5 +106,10 @@ public class DetectionZone : MonoBehaviour
         }
     }
 
+    IEnumerator AttackRest()
+    {
+        yield return new WaitForSeconds(1);
+    }
 
+    
 }

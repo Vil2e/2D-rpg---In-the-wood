@@ -34,10 +34,9 @@ public class Monster : MonoBehaviour
     protected Collider2D physicsCollider;
     protected DetectionZone detectionZone;
     protected float detectRange;
-    protected bool isAttacking = true;
 
-    public float Damage { get { return damage; } protected set { damage = value; }}
-    [SerializeField] float damage = 1f;
+
+    float damage = 1f;
 
     float bodyRemainTime;
     float knockbackForce;
@@ -45,6 +44,9 @@ public class Monster : MonoBehaviour
     float health;
     float attackRange;
 
+    public float Damage { get { return damage; } protected set { damage = value; } }
+    public float AttackRange { get { return attackRange; } }
+    public float KnockbackForce { get { return knockbackForce; } }
 
     private void Awake()
     {
@@ -77,6 +79,7 @@ public class Monster : MonoBehaviour
 
         
     }
+
 
     private void Defeated()
     {
@@ -135,22 +138,6 @@ public class Monster : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-
-        if (player != null)
-        {
-            //玩家離開攻擊範圍 解除攻擊mode
-            float distance = Vector3.Distance(collision.transform.position, transform.position);
-            if (distance > attackRange)
-            {
-                isAttacking = false;
-                animator.SetBool("isAttack", isAttacking);
-            }
-        }
-
-    }
 
     //knockback冷卻過後 再次追擊玩家
     private void ReApproach()
