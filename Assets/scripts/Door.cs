@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
-    float secToWait = 2f;
+    float secToWait = .1f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

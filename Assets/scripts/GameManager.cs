@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject door;
 
-    [SerializeField] RectTransform fader;
+    [SerializeField] Animator transitionAnim;
     [SerializeField] GameObject stopMenu;
+
 
     string path = Application.dataPath + "/Resources";
 
@@ -56,13 +57,14 @@ public class GameManager : MonoBehaviour
 
         if(nextScene > totalSceneAmount - 1) { return; }
 
-        fader.gameObject.SetActive(true);
+        transitionAnim.SetTrigger("End");
         SceneManager.LoadScene(nextScene);
+        transitionAnim.SetTrigger("Start");
+
     }
 
-    public void BackToMenu()
+    public void BackToMenu()//回到遊戲
     {
-        fader.gameObject.SetActive(true);
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
         
@@ -75,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //用來打開下一關的門
+    //解除原本隱藏在關卡的門
     public void LevelFinished()
     {
         if(door != null)
@@ -93,12 +95,14 @@ public class GameManager : MonoBehaviour
        
     }
 
-    public void Save()
+    public void Save()//存擋
     {
         SaveData saveData = new SaveData();
         int currentScene = SceneManager.GetActiveScene().buildIndex;
+
         //寫入目前第幾關
         saveData.levelNumber = currentScene;
+
         //轉成json、存擋
         string jsonFile = JsonUtility.ToJson(saveData);
         File.WriteAllText(path + "/save.json", jsonFile);
@@ -106,7 +110,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Load()
+    public void Load()//讀檔功能
     {
 
         int level = ReadJson.Instance.GetSavedLevel();

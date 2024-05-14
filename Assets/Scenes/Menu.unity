@@ -1188,13 +1188,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3660634148598524384, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
-      propertyPath: fader
-      value: 
-      objectReference: {fileID: 637113767}
+    - target: {fileID: 2784297449774395169, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3728686885637878829, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643443840217463181, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
