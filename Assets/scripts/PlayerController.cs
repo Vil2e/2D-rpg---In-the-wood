@@ -31,11 +31,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
-    {
-        EndGame();
-    }
-
+  
    
     void FixedUpdate()
     {
@@ -183,13 +179,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
-    void EndGame()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
+   
 
 
 }

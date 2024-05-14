@@ -9,6 +9,8 @@ public class SFXManager : MonoBehaviour
     public AudioSource src;
     public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound;
 
+    GameManager gameManager;
+
     private void Awake()
     {
         if(instance == null)
@@ -20,10 +22,18 @@ public class SFXManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     public void SlashSound()
     {
-        src.PlayOneShot(slashSound);
+        if (!gameManager.IsGamePause)
+        {
+            src.PlayOneShot(slashSound);
+
+        }
     }
 
     public void HitSound()
