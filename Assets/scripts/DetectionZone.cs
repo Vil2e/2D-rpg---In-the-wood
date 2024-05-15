@@ -21,7 +21,6 @@ public class DetectionZone : MonoBehaviour
   
 
 
-
     public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
 
 
@@ -40,10 +39,6 @@ public class DetectionZone : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-      
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -75,14 +70,7 @@ public class DetectionZone : MonoBehaviour
                     //render.flipX = true;
                 }
 
-                //if (direction.x > 0)
-                //{
-                //    render.flipX = false;
-                //}
-                //else if (direction.x < 0)
-                //{
-                //    render.flipX = true;
-                //}
+           
             }
 
         }

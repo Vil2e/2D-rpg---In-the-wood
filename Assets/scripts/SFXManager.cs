@@ -7,7 +7,7 @@ public class SFXManager : MonoBehaviour
     public static SFXManager instance;
 
     public AudioSource src;
-    public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound;
+    public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound, clickSound, doorAppearSound, stairsDown;
 
     GameManager gameManager;
 
@@ -56,8 +56,19 @@ public class SFXManager : MonoBehaviour
         src.PlayOneShot(playerHitSound);
     }
 
+    public void DoorAppear()
+    {
+        src.PlayOneShot(doorAppearSound);
+    } 
 
+    public void ClickSound()
+    {
+        src.PlayOneShot(clickSound);
+    }
 
-
+    public void StairsDown()
+    {
+        src.PlayOneShot(stairsDown);
+    }
 
 }

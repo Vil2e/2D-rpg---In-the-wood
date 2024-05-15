@@ -63,8 +63,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ClickStartGame()
+    {
+        SFXManager.instance.ClickSound();
+        SceneManager.LoadScene(1);
+    }
+
     public void BackToMenu()//回到遊戲
     {
+        SFXManager.instance.ClickSound();
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
         
@@ -72,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
+        SFXManager.instance.ClickSound();
         EditorApplication.ExitPlaymode();
         Application.Quit();
 
@@ -82,6 +90,7 @@ public class GameManager : MonoBehaviour
     {
         if(door != null)
         {
+            SFXManager.instance.DoorAppear();
             door.SetActive(true);
         }
 
@@ -89,6 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void Continue()
     {
+        SFXManager.instance.ClickSound();
         isGamePause = false;
         Time.timeScale = 1;
         stopMenu.SetActive(false);
@@ -97,6 +107,7 @@ public class GameManager : MonoBehaviour
 
     public void Save()//存擋
     {
+        SFXManager.instance.ClickSound();
         SaveData saveData = new SaveData();
         int currentScene = SceneManager.GetActiveScene().buildIndex;
 
@@ -112,6 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void Load()//讀檔功能
     {
+        SFXManager.instance.ClickSound();
 
         int level = ReadJson.Instance.GetSavedLevel();
 

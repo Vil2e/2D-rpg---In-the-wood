@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
-    float secToWait = .1f;
+    float secToWait = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
         {
             collision.GetComponent<PlayerController>().enabled = false;
             collision.GetComponent<Animator>().SetBool("isWalking", false);
+            SFXManager.instance.StairsDown();
             StartCoroutine("GoToNextLevel");
         }
     }

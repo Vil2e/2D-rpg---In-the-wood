@@ -15,11 +15,7 @@ public class AttackBox : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,8 +32,6 @@ public class AttackBox : MonoBehaviour
             //collision.SendMessage("OnHit", damage, knockback);
             playerHealth.OnHit(monster.Damage, knockback);
 
-
-            Debug.Log("hit");
         }
     }
 

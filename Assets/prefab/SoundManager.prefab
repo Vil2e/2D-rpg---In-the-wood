@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7335532561224153705
 MonoBehaviour:
@@ -51,6 +51,9 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 931b9218455994e0595cc486a8096a48, type: 3}
   playerDeathSound: {fileID: 8300000, guid: e92a24d9c051b4c91b6bfb712a8e3ac7, type: 3}
   playerHitSound: {fileID: 8300000, guid: 745b0e1494a704d0bb78c3d06ec5d390, type: 3}
+  clickSound: {fileID: 8300000, guid: c4d596df3d6d04ec3a566463ffe8e162, type: 3}
+  doorAppearSound: {fileID: 8300000, guid: 8d05391739578465aa523c46cb65f895, type: 3}
+  stairsDown: {fileID: 8300000, guid: 310c9796626cb4b5abbd00becd919af6, type: 3}
 --- !u!82 &4306909068754972134
 AudioSource:
   m_ObjectHideFlags: 0

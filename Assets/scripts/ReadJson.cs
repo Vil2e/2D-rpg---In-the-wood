@@ -47,6 +47,7 @@ public class ReadJson : MonoBehaviour
         return monster;
     }
 
+    //讀取存擋紀錄
     public int GetSavedLevel()
     {
         //儲存檔案的路徑
